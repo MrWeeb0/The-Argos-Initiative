@@ -1,0 +1,329 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --bg-color: #050505;
+    --panel-bg-color: #1A120B; /* Dark Brown from design */
+    --text-color: #EAEAEA;
+    --text-secondary-color: #A0A0A0;
+    --accent-color: #D4AF37; /* Gold */
+    --accent-hover-color: #E7C668;
+    --testimonial-card-bg: #E1E1E1;
+    --testimonial-text-color: #111111;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main > section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 60px;
+    color: white;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: var(--accent-hover-color);
+    transform: translateY(-2px);
+}
+
+/* --- Header --- */
+.main-header {
+    padding: 15px 0;
+    background-color: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.hero-logo-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-logo {
+    position: relative;
+    z-index: 2;
+    width: 200px; /* Adjust size as needed */
+    border-radius: 50%;
+}
+
+/* The Glowing Effect */
+.hero-logo-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0) 65%);
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 20px;
+}
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary-color);
+    margin-top: 10px;
+}
+
+/* --- Value Proposition --- */
+.value-prop h2 { color: var(--text-color); }
+.prop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+.prop-item {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 20px;
+}
+.prop-item h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-color); }
+.prop-item p { color: var(--text-secondary-color); }
+
+/* --- Testimonials Section --- */
+.testimonial-item {
+    background-color: var(--testimonial-card-bg);
+    color: var(--testimonial-text-color);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.testimonial-item.testimonial00{
+  margin-right: 50px;
+}
+
+.testimonial-avatar {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover; /* <-- Add this line */
+
+}
+
+.testimonial-content blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    border: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+.testimonial-content cite {
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Alternating Layout */
+.testimonial-item.testimonial--reverse {
+    flex-direction: row-reverse;
+    margin-left: 50px;
+
+}
+
+/* --- Call to Action (CTA) --- */
+.cta {
+    background-color: var(--bg-color);
+    text-align: center;
+}
+.cta h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: white; }
+.lead-form {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.lead-form input[type="email"] {
+    padding: 15px;
+    width: 320px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.form-message { margin-top: 15px; font-size: 0.9rem; height: 20px; }
+
+/* --- Footer Styles --- */
+footer {
+  background: var(--panel-bg-color);
+  color: var(--color-footer-text);
+  padding: 40px 0 20px 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 100px; /* Increased gap for more space */
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1 1 250px;
+  margin: 0 20px;
+}
+
+.footer-logo img {
+  width: 120px;
+  margin-bottom: 16px;
+}
+
+.footer-desc {
+  margin-bottom: 18px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.footer-social a img {
+  width: 28px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.footer-top-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2563EB;
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  margin-top: 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.12);
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+.footer-top-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-top-btn:hover {
+  background: #FB7185;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.footer-top-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+.footer-center h4, .footer-right h4 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer-center ul, .footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-center ul li, .footer-right ul li {
+  margin-bottom: 8px;
+}
+
+.footer-center ul li a, .footer-right ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.footer-center ul li a:hover, .footer-right ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bar {
+  border-top: 1px solid #fff;
+  margin: 30px 0 10px 0;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  color: #fff;
+}
+.contact{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.contact:hover {
+  text-decoration: underline;
+}
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .testimonial-item, .testimonial-item.testimonial--reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+}
