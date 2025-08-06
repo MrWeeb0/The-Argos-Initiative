@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (form) {
         const submitButton = document.getElementById('submitButton');
         const formMessage = document.getElementById('formMessage');
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbydfKX-9FzKNjNGEBmvTi4A04pnlJ6n4PO0ULr1jsvlzIHGSm0Vi3qzN3U7BroEUOHm6w/exec'; // <-- MAKE SURE THIS IS YOUR LATEST URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxxKPZ_QCNBRU0rDFzTLtmOvgwY3OpTJO6sq-pJA0oK7_V87C_wDnNujBvgNVieKyxt/exec'; // <-- MAKE SURE THIS IS YOUR LATEST URL
 
         form.addEventListener('submit', e => {
             e.preventDefault(); // This stops the page from reloading
