@@ -127,11 +127,33 @@ main > section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
+    align-items: start;
 }
+
+/* Make the first value prop narrower than the others */
+.prop-item:first-child {
+    max-width: 420px;      /* reduce width of first item */
+    justify-self: start;   /* keep it left-aligned in the grid column */
+}
+
+/* If only one value prop is present, make it narrower and center it */
+.prop-grid > .prop-item:only-child {
+    max-width: 420px;      /* reduce width when it's the lone item */
+    width: 100%;
+    justify-self: center;  /* center the item in the grid */
+    padding-left: 18px;    /* keep visual indent from the accent border */
+}
+
+/* small tweak for very narrow viewports */
+@media (max-width: 700px) {
+    .prop-item:first-child { max-width: 100%; justify-self: stretch; }
+}
+
 .prop-item {
     border-left: 3px solid var(--accent-color);
     padding-left: 20px;
 }
+
 .prop-item h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-color); }
 .prop-item p { color: var(--text-secondary-color); }
 
@@ -285,6 +307,23 @@ main > section {
     .product-card.compact { min-height: auto; }
     .final-price-large { font-size:1.6rem; }
 }
+
+/* If only one product is present, make it narrower and center it */
+.product-grid.compact > .product-card:only-child {
+    max-width: 400px;      /* reduce width when it's the lone product */
+    width: 100%;
+    justify-self: center;  /* center the card in the grid */
+    margin: 0 auto;
+}
+
+/* small screens: let it stretch full width again */
+@media (max-width: 700px) {
+    .product-grid.compact > .product-card:only-child {
+        max-width: 90%;
+        margin: 20px;
+    }
+}
+
 /* --- Testimonials Section --- */
 .testimonial-item {
     background-color: var(--testimonial-card-bg);
