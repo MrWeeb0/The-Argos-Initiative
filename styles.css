@@ -93,8 +93,9 @@ main > section {
 .hero-logo {
     position: relative;
     z-index: 2;
-    width: 200px; /* Adjust size as needed */
-    border-radius: 50%;
+    width: 50%; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px;
 }
 /* Style for the new hero video */
 .hero-video {
